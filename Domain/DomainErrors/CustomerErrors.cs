@@ -4,6 +4,11 @@ namespace Domain.DomainErrors
 {
     public static partial class CustomerErrors
     {
+        public static Error BadIdFormat => Error.Validation(
+            code: "Customer.BadIdFormat",
+            description: "Bad format in ID"
+        );
+
         public static Error BadFirstNameFormat => Error.Validation(
             code: "Customer.BadFirstNameFormat",
             description: "Bad format in first name"
