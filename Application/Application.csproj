@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Customers\GetAll\" />
-    <Folder Include="Customers\GetById\" />
-    <Folder Include="Customers\Update\" />
-    <Folder Include="WaterMeters\Create\" />
     <Folder Include="WaterMeters\Delete\" />
     <Folder Include="WaterMeters\GetAll\" />
     <Folder Include="WaterMeters\GetById\" />

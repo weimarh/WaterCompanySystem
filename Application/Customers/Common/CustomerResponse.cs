@@ -2,7 +2,7 @@
 {
     public record CustomerResponse
     (
-        Guid CustomerId,
+        string CustomerId,
         string CustomerName,
         string PhoneNumber
     );

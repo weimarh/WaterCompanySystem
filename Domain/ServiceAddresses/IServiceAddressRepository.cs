@@ -1,6 +1,6 @@
 ﻿namespace Domain.ServiceAddresses
 {
-    public interface IServiceAddress
+    public interface IServiceAddressRepository
     {
         Task<IReadOnlyList<ServiceAddress>> GetAllAsync();
         Task<ServiceAddress?> GetByIdAsync(ServiceAddressId id);

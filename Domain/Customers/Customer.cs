@@ -9,13 +9,6 @@ namespace Domain.Customers
     {
         private Customer() { }
 
-        public Customer(string firstName, string lastName, PhoneNumber phoneNumber)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            PhoneNumber = phoneNumber;
-        }
-
         public Customer(CustomerId customerId, string firstName, string lastName, PhoneNumber phoneNumber)
         {
             CustomerId = customerId;
@@ -31,9 +24,9 @@ namespace Domain.Customers
         public ICollection<WaterMeter> WaterMeters { get; private set; } = null!;
         public ICollection<Invoice> Invoices { get; private set; } = null!;
 
-        public static Customer UpdateCustomer(string firstName, string lastName, PhoneNumber phoneNumber)
+        public static Customer UpdateCustomer(CustomerId customerId, string firstName, string lastName, PhoneNumber phoneNumber)
         {
-            return new Customer(firstName, lastName, phoneNumber);
+            return new Customer(customerId, firstName, lastName, phoneNumber);
         }
     }
 }
