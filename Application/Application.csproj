@@ -18,11 +18,4 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="WaterMeters\Delete\" />
-    <Folder Include="WaterMeters\GetAll\" />
-    <Folder Include="WaterMeters\GetById\" />
-    <Folder Include="WaterMeters\Update\" />
-  </ItemGroup>
-
 </Project>

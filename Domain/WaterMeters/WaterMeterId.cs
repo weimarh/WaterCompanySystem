@@ -1,4 +1,4 @@
 ﻿namespace Domain.WaterMeters
 {
-    public record WaterMeterId(Guid Id);
+    public record WaterMeterId(Guid Value);
 }

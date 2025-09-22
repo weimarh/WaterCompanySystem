@@ -10,16 +10,6 @@ namespace Domain.WaterMeters
     {
         private WaterMeter() { }
 
-        public WaterMeter(string model, DateTime installationDate,ServiceAddressId serviceAddressId ,ServiceAddress serviceAddress, CustomerId customerId, Customer customer)
-        {
-            Model = model;
-            InstallationDate = installationDate;
-            ServiceAddressId = serviceAddressId;
-            ServiceAddress = serviceAddress;
-            CustomerId = customerId;
-            Customer = customer;
-        }
-
         public WaterMeter(WaterMeterId waterMeterId, string model, DateTime installationDate, ServiceAddressId serviceAddressId, ServiceAddress serviceAddress, CustomerId customerId, Customer customer)
         {
             WaterMeterId = waterMeterId;
@@ -41,9 +31,16 @@ namespace Domain.WaterMeters
         public List<Reading> Readings { get; private set; } = null!;
         public ICollection<Invoice> Invoices { get; private set; } = null!;
 
-        public static WaterMeter UpdateWaterMeter(string model, DateTime installationDate, ServiceAddressId serviceAddressId, ServiceAddress serviceAddress, CustomerId customerId, Customer customer)
+        public static WaterMeter UpdateWaterMeter(WaterMeterId waterMeterId, string model, DateTime installationDate, ServiceAddressId serviceAddressId, ServiceAddress serviceAddress, CustomerId customerId, Customer customer)
         {
-            return new WaterMeter(model, installationDate, serviceAddressId, serviceAddress, customerId, customer);
+            return new WaterMeter(
+                waterMeterId,
+                model,
+                installationDate,
+                serviceAddressId,
+                serviceAddress,
+                customerId,
+                customer);
         }
     }
 }
