@@ -14,6 +14,11 @@ namespace Domain.DomainErrors
             description: "Bad format in house number"
         );
 
+        public static Error BadRatePlanFormat => Error.Validation(
+            code: "ServiceAddress.BadRatePlanFormat",
+            description: "Bad format in rate plan"
+        );
+
         public static Error ServiceAddressNotFound => Error.Validation(
             code: "ServiceAddress.ServiceAddressNotFound",
             description: "Service Address not found"

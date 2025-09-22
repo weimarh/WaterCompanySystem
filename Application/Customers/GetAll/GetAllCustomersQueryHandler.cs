@@ -14,7 +14,7 @@ namespace Application.Customers.GetAll
             _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
         }
 
-        public async Task<ErrorOr<IReadOnlyList<CustomerResponse>>> Handle(GetAllCustomersQuery request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<IReadOnlyList<CustomerResponse>>> Handle(GetAllCustomersQuery query, CancellationToken cancellationToken)
         {
             IReadOnlyList<Customer> customers = await _customerRepository.GetAllAsync();
 

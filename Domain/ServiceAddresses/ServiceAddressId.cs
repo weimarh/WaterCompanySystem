@@ -1,4 +1,4 @@
 ﻿namespace Domain.ServiceAddresses
 {
-    public record ServiceAddressId(Guid id);
+    public record ServiceAddressId(Guid Value);
 }

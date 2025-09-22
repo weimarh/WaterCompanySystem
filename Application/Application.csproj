@@ -18,4 +18,9 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ServiceAddresses\GetById\" />
+    <Folder Include="ServiceAddresses\Update\" />
+  </ItemGroup>
+
 </Project>

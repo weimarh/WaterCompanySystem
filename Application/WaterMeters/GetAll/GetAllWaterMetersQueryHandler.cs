@@ -20,7 +20,7 @@ namespace Application.WaterMeters.GetAll
             _serviceAddressRepository = serviceAddressRepository ?? throw new ArgumentNullException(nameof(serviceAddressRepository));
         }
 
-        public async Task<ErrorOr<IReadOnlyList<WaterMeterResponse>>> Handle(GetAllWaterMetersQuery request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<IReadOnlyList<WaterMeterResponse>>> Handle(GetAllWaterMetersQuery query, CancellationToken cancellationToken)
         {
             IReadOnlyList<WaterMeter> waterMeters = await _waterMeterRepository.GetAllAsync();
 

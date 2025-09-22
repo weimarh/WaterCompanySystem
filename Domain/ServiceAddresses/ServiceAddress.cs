@@ -7,14 +7,7 @@ namespace Domain.ServiceAddresses
 {
     public sealed class ServiceAddress : AggregateRoot
     {
-        public ServiceAddress() { }
-
-        public ServiceAddress(string streetName, HouseNumber houseNumber, RatePlan ratePlan)
-        {
-            StreetName = streetName;
-            HouseNumber = houseNumber;
-            RatePlan = ratePlan;
-        }
+        private ServiceAddress() { }
 
         public ServiceAddress(ServiceAddressId streetAddressId, string streetName, HouseNumber houseNumber, RatePlan ratePlan)
         {
@@ -31,9 +24,9 @@ namespace Domain.ServiceAddresses
         public ICollection<Invoice> Invoices { get; private set; } = null!;
 
 
-        public static ServiceAddress UpdateServiceAddress(string streetName, HouseNumber houseNumber, RatePlan ratePlan)
+        public static ServiceAddress UpdateServiceAddress(ServiceAddressId serviceAddressId, string streetName, HouseNumber houseNumber, RatePlan ratePlan)
         {
-            return new ServiceAddress(streetName, houseNumber, ratePlan);
+            return new ServiceAddress(serviceAddressId, streetName, houseNumber, ratePlan);
         }
     }
 }

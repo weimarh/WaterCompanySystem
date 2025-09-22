@@ -21,9 +21,9 @@ namespace Application.WaterMeters.GetById
             _waterMeterRepository = waterMeterRepository ?? throw new ArgumentNullException(nameof(waterMeterRepository));
         }
 
-        public async Task<ErrorOr<WaterMeterResponse>> Handle(GetWaterMeterByIdQuery request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<WaterMeterResponse>> Handle(GetWaterMeterByIdQuery query, CancellationToken cancellationToken)
         {
-            if (await _waterMeterRepository.GetByIdAsync(new WaterMeterId(request.WaterMeterId)) is not WaterMeter waterMeter)
+            if (await _waterMeterRepository.GetByIdAsync(new WaterMeterId(query.WaterMeterId)) is not WaterMeter waterMeter)
                 return WaterMeterErrors.WaterMeterNotFound;
 
             var customer = await _customerRepository.GetByIdAsync(waterMeter.CustomerId);

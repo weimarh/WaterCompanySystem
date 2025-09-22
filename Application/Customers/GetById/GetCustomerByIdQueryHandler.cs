@@ -15,9 +15,9 @@ namespace Application.Customers.GetById
             _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
         }
 
-        public async Task<ErrorOr<CustomerResponse>> Handle(GetCustomerByIdQuery request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<CustomerResponse>> Handle(GetCustomerByIdQuery query, CancellationToken cancellationToken)
         {
-            if (await _customerRepository.GetByIdAsync(new CustomerId(request.CustomerId)) is not Customer customer)
+            if (await _customerRepository.GetByIdAsync(new CustomerId(query.CustomerId)) is not Customer customer)
                 return CustomerErrors.CustomerNotFound;
 
             return new CustomerResponse
