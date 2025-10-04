@@ -5,8 +5,8 @@
         Task<IReadOnlyList<Payment>> GetAllAsync();
         Task<Payment?> GetByIdAsync(PaymentId id);
         Task<bool> ExistsAsync(PaymentId id);
-        Task Add(Payment customer);
-        Task Update(Payment customer);
-        Task Delete(Payment customer);
+        Task Add(Payment payment);
+        Task Update(Payment payment);
+        Task Delete(Payment payment);
     }
 }

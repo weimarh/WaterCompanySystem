@@ -42,7 +42,7 @@ namespace Application.Customers.Update
                 phoneNumber);
 
             await _customerRepository.Update(customer);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
     }

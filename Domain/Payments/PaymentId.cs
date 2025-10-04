@@ -1,4 +1,4 @@
 ﻿namespace Domain.Payments
 {
-    public record PaymentId(Guid Id);
+    public record PaymentId(Guid Value);
 }

@@ -19,7 +19,7 @@ namespace Domain.DomainErrors
             description: "Bad format in rate plan"
         );
 
-        public static Error ServiceAddressNotFound => Error.Validation(
+        public static Error ServiceAddressNotFound => Error.NotFound(
             code: "ServiceAddress.ServiceAddressNotFound",
             description: "Service Address not found"
         );

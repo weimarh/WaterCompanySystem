@@ -49,7 +49,7 @@ namespace Application.WaterMeters.Create
             );
 
             await _waterMeterRepository.Add(waterMeter);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
     }

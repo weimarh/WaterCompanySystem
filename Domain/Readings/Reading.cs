@@ -8,14 +8,6 @@ namespace Domain.Readings
     {
         private Reading() { }
 
-        public Reading(DateTime readingDate, ReadingValue readingValue, WaterMeterId waterMeterId, WaterMeter waterMeter)
-        {
-            ReadingDate = readingDate;
-            ReadingValue = readingValue;
-            WaterMeterId = waterMeterId;
-            WaterMeter = waterMeter;
-        }
-
         public Reading(ReadingId readingId, DateTime readingDate, ReadingValue readingValue, WaterMeterId waterMeterId, WaterMeter waterMeter)
         {
             ReadingId = readingId;
@@ -31,9 +23,9 @@ namespace Domain.Readings
         public WaterMeterId WaterMeterId { get; private set; } = null!;
         public WaterMeter WaterMeter { get; private set; } = null!;
 
-        public static Reading UpdateReading(DateTime readingDate, ReadingValue readingValue, WaterMeterId waterMeterId, WaterMeter waterMeter)
+        public static Reading UpdateReading(ReadingId readingId, DateTime readingDate, ReadingValue readingValue, WaterMeterId waterMeterId, WaterMeter waterMeter)
         {
-            return new Reading(readingDate, readingValue, waterMeterId, waterMeter);
+            return new Reading(readingId, readingDate, readingValue, waterMeterId, waterMeter);
         }
     }
 }

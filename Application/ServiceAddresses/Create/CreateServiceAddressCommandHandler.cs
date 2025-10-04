@@ -39,7 +39,7 @@ namespace Application.ServiceAddresses.Create
             );
 
             await _serviceAddressRepository.Add(serviceAddress);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
     }

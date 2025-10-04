@@ -26,7 +26,7 @@ namespace Application.Customers.Delete
                 return CustomerErrors.CustomerNotFound;
 
             await _customerRepository.Delete(customer);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
     }

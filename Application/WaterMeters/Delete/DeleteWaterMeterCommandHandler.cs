@@ -23,7 +23,7 @@ namespace Application.WaterMeters.Delete
                 return WaterMeterErrors.WaterMeterNotFound;
 
             await _waterMeterRepository.Delete(waterMeter);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
     }

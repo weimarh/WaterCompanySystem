@@ -23,7 +23,7 @@ namespace Application.ServiceAddresses.Delete
                 return ServiceAddressErrors.ServiceAddressNotFound;
 
             await _serviceAddressRepository.Delete(serviceAddress);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
     }

@@ -19,8 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ServiceAddresses\GetById\" />
-    <Folder Include="ServiceAddresses\Update\" />
+    <Folder Include="Payments\Update\" />
   </ItemGroup>
 
 </Project>

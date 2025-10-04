@@ -42,7 +42,7 @@ namespace Application.Customers.Create
             );
 
             await _customerRepository.Add(customer);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
     }

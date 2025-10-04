@@ -1,4 +1,4 @@
 ﻿namespace Domain.Invoices
 {
-    public record InvoiceId(Guid Id);
+    public record InvoiceId(Guid Value);
 }

@@ -24,7 +24,7 @@ namespace Domain.DomainErrors
             description: "Bad format in phone number"
         );
 
-        public static Error CustomerNotFound => Error.Validation(
+        public static Error CustomerNotFound => Error.NotFound(
             code: "Customer.CustomerNotFound",
             description: "Customer not found"
         );

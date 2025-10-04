@@ -50,7 +50,7 @@ namespace Application.WaterMeters.Update
                 customer);
 
             await _waterMeterRepository.Update(waterMeter);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
     }

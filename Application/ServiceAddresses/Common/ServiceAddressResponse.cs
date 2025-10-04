@@ -1,6 +1,4 @@
-﻿using Domain.Enums;
-
-namespace Application.ServiceAddresses.Common
+﻿namespace Application.ServiceAddresses.Common
 {
     public record ServiceAddressResponse(
         Guid ServiceAddressId,
