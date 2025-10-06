@@ -16,7 +16,7 @@ namespace Application.Payments.DomainEventHandlers
         public async Task Handle(PaymentDeletedEvent notification, CancellationToken cancellationToken)
         {
             var command = new UpdateInvoiceCommand(
-                notification.Invoice.InvoiceId,
+                notification.Invoice,
                 notification.Invoice.BillingPeriod,
                 notification.Invoice.DueDate,
                 false,

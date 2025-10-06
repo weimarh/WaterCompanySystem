@@ -10,7 +10,7 @@ using MediatR;
 namespace Application.Invoices.Update
 {
     public record UpdateInvoiceCommand(
-        InvoiceId InvoiceId,
+        Invoice Invoice,
         DateTime BillingPeriod,
         DateTime DueDate,
         bool IsPaid,

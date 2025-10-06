@@ -9,6 +9,11 @@ namespace Domain.DomainErrors
             description: "Error generating invoice number"
         );
 
+        public static Error InvoiceDueAmount => Error.Validation(
+            code: "Invoice.InvoiceDueAmount",
+            description: "Error generating due amount"
+        );
+
         public static Error InvoiceNotFound => Error.NotFound(
             code: "Invoice.InvoiceNotFound",
             description: "Invoice not found"

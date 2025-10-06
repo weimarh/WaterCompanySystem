@@ -29,7 +29,7 @@ namespace Domain.WaterMeters
         public CustomerId CustomerId { get; private set; } = null!;
         public Customer Customer { get; private set; } = null!;
         public List<Reading> Readings { get; private set; } = null!;
-        public ICollection<Invoice> Invoices { get; private set; } = null!;
+        public List<Invoice> Invoices { get; private set; } = null!;
 
         public static WaterMeter UpdateWaterMeter(WaterMeterId waterMeterId, string model, DateTime installationDate, ServiceAddressId serviceAddressId, ServiceAddress serviceAddress, CustomerId customerId, Customer customer)
         {

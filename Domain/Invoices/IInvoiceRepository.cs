@@ -10,7 +10,7 @@ namespace Domain.Invoices
         Task<Invoice?> GetByReadingIdAsync(ReadingId id);
         Task<bool> ExistsAsync(InvoiceId id);
         Task Add(Invoice invoice);
-        Task Update(Invoice invoice);
-        Task Delete(Invoice invoice);
+        void Update(Invoice invoice);
+        void Delete(Invoice invoice);
     }
 }

@@ -34,7 +34,7 @@ namespace Application.BaseRates.Update
                 command.CreationDate,
                 amount);
 
-            await _baseRateRepository.Update(baseRate);
+            _baseRateRepository.Update(baseRate);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

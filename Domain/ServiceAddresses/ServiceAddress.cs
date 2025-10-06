@@ -21,7 +21,7 @@ namespace Domain.ServiceAddresses
         public string StreetName { get; private set; } = null!;
         public HouseNumber HouseNumber { get; private set; } = null!;
         public RatePlan RatePlan { get; private set; }
-        public ICollection<Invoice> Invoices { get; private set; } = null!;
+        public List<Invoice> Invoices { get; private set; } = null!;
 
 
         public static ServiceAddress UpdateServiceAddress(ServiceAddressId serviceAddressId, string streetName, HouseNumber houseNumber, RatePlan ratePlan)

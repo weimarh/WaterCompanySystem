@@ -22,7 +22,7 @@ namespace Application.BaseRates.Delete
             if (await _baseRateRepository.GetByIdAsync(new BaseRateId(command.BaseRateId)) is not BaseRate baseRate)
                 return BaseRateErrors.BaseRateNotFound;
 
-            await _baseRateRepository.Delete(baseRate);
+            _baseRateRepository.Delete(baseRate);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

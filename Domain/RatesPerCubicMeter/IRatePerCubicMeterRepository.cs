@@ -6,7 +6,7 @@
         Task<RatePerCubicMeter?> GetByIdAsync(RatePerCubicMeterId id);
         Task<bool> ExistsAsync(RatePerCubicMeterId id);
         Task Add(RatePerCubicMeter ratePerCubicMeter);
-        Task Update(RatePerCubicMeter ratePerCubicMeter);
-        Task Delete(RatePerCubicMeter ratePerCubicMeter);
+        void Update(RatePerCubicMeter ratePerCubicMeter);
+        void Delete(RatePerCubicMeter ratePerCubicMeter);
     }
 }

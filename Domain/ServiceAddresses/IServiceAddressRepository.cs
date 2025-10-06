@@ -6,7 +6,7 @@
         Task<ServiceAddress?> GetByIdAsync(ServiceAddressId id);
         Task<bool> ExistsAsync(ServiceAddressId id);
         Task Add(ServiceAddress serviceAddress);
-        Task Update(ServiceAddress serviceAddress);
-        Task Delete(ServiceAddress serviceAddress);
+        void Update(ServiceAddress serviceAddress);
+        void Delete(ServiceAddress serviceAddress);
     }
 }

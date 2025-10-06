@@ -25,7 +25,7 @@ namespace Application.Customers.Delete
             if (await _customerRepository.GetByIdAsync(new CustomerId(command.CustomerId)) is not Customer customer)
                 return CustomerErrors.CustomerNotFound;
 
-            await _customerRepository.Delete(customer);
+            _customerRepository.Delete(customer);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

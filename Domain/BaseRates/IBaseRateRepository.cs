@@ -6,7 +6,7 @@
         Task<BaseRate?> GetByIdAsync(BaseRateId id);
         Task<bool> ExistsAsync(BaseRateId id);
         Task Add(BaseRate baseRate);
-        Task Update(BaseRate baseRate);
-        Task Delete(BaseRate baseRate);
+        void Update(BaseRate baseRate);
+        void Delete(BaseRate baseRate);
     }
 }

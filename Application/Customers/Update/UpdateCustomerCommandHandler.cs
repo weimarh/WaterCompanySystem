@@ -41,7 +41,7 @@ namespace Application.Customers.Update
                 command.LastName,
                 phoneNumber);
 
-            await _customerRepository.Update(customer);
+            _customerRepository.Update(customer);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

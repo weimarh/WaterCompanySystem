@@ -6,7 +6,7 @@
         Task<Payment?> GetByIdAsync(PaymentId id);
         Task<bool> ExistsAsync(PaymentId id);
         Task Add(Payment payment);
-        Task Update(Payment payment);
-        Task Delete(Payment payment);
+        void Update(Payment payment);
+        void Delete(Payment payment);
     }
 }

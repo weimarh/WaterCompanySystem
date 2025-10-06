@@ -6,7 +6,7 @@
         Task<WaterMeter?> GetByIdAsync(WaterMeterId id);
         Task<bool> ExistsAsync(WaterMeterId id);
         Task Add(WaterMeter waterMeter);
-        Task Update(WaterMeter waterMeter);
-        Task Delete(WaterMeter waterMeter);
+        void Update(WaterMeter waterMeter);
+        void Delete(WaterMeter waterMeter);
     }
 }

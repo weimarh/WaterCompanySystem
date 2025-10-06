@@ -9,7 +9,7 @@ namespace Domain.Readings
         Task<Reading?> GetByIdAsync(ReadingId id);
         Task<bool> ExistsAsync(ReadingId id);
         Task Add(Reading reading);
-        Task Update(Reading reading);
-        Task Delete(Reading reading);
+        void Update(Reading reading);
+        void Delete(Reading reading);
     }
 }
