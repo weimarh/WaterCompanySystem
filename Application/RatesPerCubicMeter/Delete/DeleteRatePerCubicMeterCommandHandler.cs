@@ -22,7 +22,7 @@ namespace Application.RatesPerCubicMeter.Delete
             if (await _ratePerCubicMeterRepository.GetByIdAsync(new RatePerCubicMeterId(command.RatePerCubicMeterId)) is not RatePerCubicMeter ratePerCubicMeter)
                 return RatePerCubicMeterErrors.RatePerCubicMeterNotFound;
 
-            await _ratePerCubicMeterRepository.Delete(ratePerCubicMeter);
+            _ratePerCubicMeterRepository.Delete(ratePerCubicMeter);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

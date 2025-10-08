@@ -34,7 +34,7 @@ namespace Application.Invoices.Update
                 command.ServiceAddressId,
                 command.ServiceAddress);
 
-            await _invoiceRepository.Update(invoice);
+            _invoiceRepository.Update(invoice);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

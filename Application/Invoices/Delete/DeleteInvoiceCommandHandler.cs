@@ -22,7 +22,7 @@ namespace Application.Invoices.Delete
             if (await _invoiceRepository.GetByIdAsync(new InvoiceId(command.InvoiceId)) is not Invoice invoice)
                 return InvoiceErrors.InvoiceNotFound;
 
-            await _invoiceRepository.Delete(invoice);
+            _invoiceRepository.Delete(invoice);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

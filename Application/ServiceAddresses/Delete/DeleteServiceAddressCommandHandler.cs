@@ -22,7 +22,7 @@ namespace Application.ServiceAddresses.Delete
             if (await _serviceAddressRepository.GetByIdAsync(new ServiceAddressId(command.ServiceAddressId)) is not ServiceAddress serviceAddress)
                 return ServiceAddressErrors.ServiceAddressNotFound;
 
-            await _serviceAddressRepository.Delete(serviceAddress);
+            _serviceAddressRepository.Delete(serviceAddress);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

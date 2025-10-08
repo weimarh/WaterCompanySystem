@@ -116,7 +116,7 @@ namespace Application.Readings.Update
                 waterMeter.WaterMeterId,
                 waterMeter);
 
-            await _readingRepository.Update(reading);
+            _readingRepository.Update(reading);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             await _publisher.Publish(new ReadingUpdatedEvent(
                 invoice,

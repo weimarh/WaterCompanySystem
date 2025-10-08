@@ -31,7 +31,7 @@ namespace Application.Payments.Delete
             if (await _invoiceRepository.GetByInvoiceNumberAsync(payment.InvoiceNumber) is not Invoice invoice)
                 return PaymentErrors.InvoiceNotFound;
 
-            await _paymentRepository.Delete(payment);
+            _paymentRepository.Delete(payment);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             await _publisher.Publish(new PaymentDeletedEvent(invoice));
             return Unit.Value;

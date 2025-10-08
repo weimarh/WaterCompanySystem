@@ -39,7 +39,7 @@ namespace Application.ServiceAddresses.Update
                 houseNumber,
                 command.RatePlan);
 
-            await _serviceAddressRepository.Update(serviceAddress);
+            _serviceAddressRepository.Update(serviceAddress);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

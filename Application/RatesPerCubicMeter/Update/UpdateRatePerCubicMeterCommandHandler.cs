@@ -34,7 +34,7 @@ namespace Application.RatesPerCubicMeter.Update
                 command.CreationDate,
                 amount);
 
-            await _ratePerCubicMeterRepository.Update(rate);
+            _ratePerCubicMeterRepository.Update(rate);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

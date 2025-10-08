@@ -31,7 +31,7 @@ namespace Application.Readings.Delete
             if (await _invoiceRepository.GetByReadingIdAsync(reading.ReadingId) is not Invoice invoice)
                 return ReadingErrors.NoInvoiceFound;
 
-            await _readingRepository.Delete(reading);
+            _readingRepository.Delete(reading);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             await _publisher.Publish(new ReadingDeletedEvent(invoice.InvoiceId));
 

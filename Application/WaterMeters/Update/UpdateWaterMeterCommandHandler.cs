@@ -49,7 +49,7 @@ namespace Application.WaterMeters.Update
                 customer.CustomerId,
                 customer);
 
-            await _waterMeterRepository.Update(waterMeter);
+            _waterMeterRepository.Update(waterMeter);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

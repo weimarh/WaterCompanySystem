@@ -22,7 +22,7 @@ namespace Application.WaterMeters.Delete
             if (await _waterMeterRepository.GetByIdAsync(new WaterMeterId(command.WaterMeterId)) is not WaterMeter waterMeter)
                 return WaterMeterErrors.WaterMeterNotFound;
 
-            await _waterMeterRepository.Delete(waterMeter);
+            _waterMeterRepository.Delete(waterMeter);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }
