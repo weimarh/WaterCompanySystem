@@ -29,7 +29,6 @@ namespace WaterCompanyUnitTests.BaseRatesUnitTests
             //Act
             var result = await _controller.DeleteBaseRate(baseRateId);
 
-            //Assert
             // Assert
             var okResult = Assert.IsType<OkObjectResult>(result);
             var returnedBaseRate = Assert.IsType<Unit>(okResult.Value);
